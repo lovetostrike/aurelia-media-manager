@@ -1,0 +1,15 @@
+drag-and-drop {
+  div {
+    height: 10em;
+    background: green;
+  }
+  input {
+    opacity: 0;
+  }
+  label {
+    display: block;
+    width: 5em;
+    height: 5em;
+    background: red;
+  }
+}

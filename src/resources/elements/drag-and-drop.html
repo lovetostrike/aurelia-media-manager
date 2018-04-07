@@ -1,0 +1,25 @@
+<template>
+  <require from='./drag-and-drop.scss'></require>
+
+  <div
+    drop.delegate='handleDrop($event)'
+    dragover.delegate='$event.preventDefault()'
+  >
+    Drag and drop here to upload files
+  </div>
+  <div>
+    <label for.one-time='id' tr='uploadMedia'>Or click here to upload a media file</label>
+    <input
+      type='file'
+      id.one-time='id'
+      accept.one-time='fileTypesString'
+      change.delegate='handleInputChange($event)'
+      multiple.one-time='multiple'
+    />
+  </div>
+  <ul show.bind='files.length'>
+    <li repeat.for='file of files'>
+      ${file.name} - ${file.size} - ${file.type}
+    </li>
+  </ul>
+</template>
