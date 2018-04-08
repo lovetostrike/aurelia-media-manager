@@ -1,5 +1,6 @@
 <template>
   <require from='./drag-and-drop.scss'></require>
+  <require from='resources/value-converters/get-value'></require>
 
   <div
     drop.delegate='handleDrop($event)'
@@ -19,7 +20,12 @@
   </div>
   <ul show.bind='files.length'>
     <li repeat.for='file of files'>
-      ${file.name} - ${file.size} - ${file.type}
+      ${file.name} - ${file.size} - ${file.type} ---- # ${$index} ---- ${uploadProgresses[$index] & signal:'update-file-list'} %
+    </li>
+  </ul>
+  <ul>
+    <li repeat.for='progress of uploadProgresses'>
+      ${progress}
     </li>
   </ul>
 </template>

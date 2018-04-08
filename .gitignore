@@ -32,3 +32,6 @@ scripts
 
 # Logs
 *.log
+
+# test files
+uploads/
