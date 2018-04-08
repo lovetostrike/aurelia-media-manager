@@ -1,8 +1,6 @@
 import { autoinject, bindable } from 'aurelia-framework'
 import {uploadFiles} from 'lib/file-upload'
-import { BindingSignaler } from 'aurelia-templating-resources';
 
-@autoinject
 export class DragAndDrop {
   private id: string
   private fileTypesString: string
@@ -12,14 +10,14 @@ export class DragAndDrop {
     'application/*'
   ]
   private files: Array<File>
-  private uploadProgresses: Array<number>
+  private uploads: Array<any>
   @bindable private multiple: boolean = true
 
-  constructor(private signaler: BindingSignaler) {
+  constructor() {
     this.id = `aurelia-media-manager-${Date.now()}`
     this.files = []
     this.fileTypesString = this.fileTypes.join()
-    this.uploadProgresses = []
+    this.uploads = []
   }
 
   handleInputChange = (event: Event) => {
@@ -41,19 +39,29 @@ export class DragAndDrop {
   handleUploadProgress = (event: any, fileIndex: number) => {
     if (event.lengthComputable) {
       const percentage = Math.round((event.loaded * 100) / event.total)
-      this.uploadProgresses.splice(fileIndex, 1, percentage)
-      this.signaler.signal('update-file-list')
-      console.log(fileIndex, percentage, this.uploadProgresses)
+      this.updateUploadProgress(fileIndex, percentage)
     }
   }
 
   handleLoadComplete = (event: Event, fileIndex: number) => {
-    console.log('upload complete', this)
-    this.uploadProgresses.splice(fileIndex, 1, 100)
+    this.updateUploadProgress(fileIndex, 100)
   }
 
-  private uploadFiles (files) {
-    this.files = Array.isArray(files) ? files : Array.from(files)
-    uploadFiles(this.files, this.handleUploadProgress, this.handleLoadComplete)
+  private updateUploadProgress(index: number, percentage: number) {
+    const upload = this.uploads[index]
+    upload.progress = percentage
+    this.uploads.splice(index, 1, upload)
+  }
+
+  private uploadFiles (files: Array<File> | FileList) {
+    this.uploads = []
+    const filesToUpload = Array.isArray(files) ? files : Array.from(files)
+    filesToUpload.forEach(file => {
+      this.uploads.push({
+        file,
+        progress: 0
+      })
+    })
+    uploadFiles(filesToUpload, this.handleUploadProgress, this.handleLoadComplete)
   }
 }

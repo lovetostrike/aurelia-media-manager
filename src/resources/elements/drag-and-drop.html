@@ -18,9 +18,9 @@
       multiple.one-time='multiple'
     />
   </div>
-  <ul show.bind='files.length'>
-    <li repeat.for='file of files'>
-      ${file.name} - ${file.size} - ${file.type} ---- # ${$index} ---- ${uploadProgresses[$index] & signal:'update-file-list'} %
+  <ul show.bind='uploads.length'>
+    <li repeat.for='upload of uploads'>
+      ${upload.file.name} - ${upload.file.size} - ${upload.file.type} ---- # ${$index} ---- ${upload.progress} %
     </li>
   </ul>
   <ul>
