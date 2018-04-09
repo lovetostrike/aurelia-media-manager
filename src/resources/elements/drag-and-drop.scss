@@ -1,7 +1,7 @@
 drag-and-drop {
-  height: 10em;
-  background: green;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   .upload-controls {
     display: flex;
@@ -11,6 +11,12 @@ drag-and-drop {
     padding: 1em;
     border: dotted 2px black;
     cursor: pointer;
+
+    &:hover {
+      background: lightgray;
+      opacity: 0.8;
+    }
+
     div {
       margin: 0.5em;
     }
@@ -28,5 +34,15 @@ drag-and-drop {
     height: 5em;
     background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  .uploads {
+    width: 80vw;
+    max-width: 25em;
+    padding: 0;
+    li {
+      list-style: none;
+      margin-bottom: 0.5em;
+    }
   }
 }

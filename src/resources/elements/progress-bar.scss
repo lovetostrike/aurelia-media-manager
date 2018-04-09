@@ -1,0 +1,19 @@
+progress-bar {
+  .progress {
+    position: relative;
+    padding: 0.2em;
+    border-radius: 1em;
+    background: grey;
+  }
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .meter {
+    background-color: green;
+    height: 1em;
+    border-radius: 1em;
+  }
+}

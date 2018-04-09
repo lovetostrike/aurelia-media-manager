@@ -1,18 +1,15 @@
 <template>
   <require from='./drag-and-drop.scss'></require>
-  <require from='resources/value-converters/get-value'></require>
+  <require from='./progress-bar.html'></require>
 
-  <ul show.bind='uploads.length'>
+  <ul show.bind='uploads.length' class='uploads'>
     <h2>Uploads</h2>
     <li repeat.for='upload of uploads'>
-      ${upload.file.name} - ${upload.file.size} - ${upload.file.type} ---- # ${$index} ---- ${upload.progress} %
+      <div>${upload.file.name} - ${upload.file.size} - ${upload.file.type}</div>
+      <progress-bar percentage.bind='upload.progress'></progress-bar>
     </li>
   </ul>
-  <ul>
-    <li repeat.for='progress of uploadProgresses'>
-      ${progress}
-    </li>
-  </ul>
+
   <label for.one-time='id' tr='uploadMedia'>
     <div
       drop.delegate='handleDrop($event)'
