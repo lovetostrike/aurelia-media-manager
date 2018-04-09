@@ -12,7 +12,7 @@ const uploadFiles = (files: Array<File>, onProgress: Function, onLoad: Function)
     }, false
     )
 
-    xhr.open('POST', 'http://localhost:3000/upload')
+    xhr.open('POST', 'http://localhost:3000/upload', true)
     const formData = new FormData()
     formData.append(`file${index}`, file)
     xhr.send(formData)

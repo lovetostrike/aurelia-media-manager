@@ -1,15 +1,32 @@
 drag-and-drop {
-  div {
-    height: 10em;
-    background: green;
+  height: 10em;
+  background: green;
+
+
+  .upload-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    border: dotted 2px black;
+    cursor: pointer;
+    div {
+      margin: 0.5em;
+    }
   }
+
   input {
     opacity: 0;
+    width: 0;
   }
-  label {
-    display: block;
+
+  .upload-icon {
+    // Font Awesome License https://fontawesome.com/license
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAFNUlEQVR4nO2cX2gcRRzHPxMOOcoRSpFQQggxxlCKSBF9iaLQB5EiWKEUERFF/PPsmyCIj30Sn0qRElqp+lzUKm2IIopviqJIGoqgoiBKhNhck/TGh99eurnOXm/Tmd/s5ua7DKHHduc3n/vd/H67+5sxFktSeI3ENmBYlEArKYFWUgKtpEZsA8rIYFrAKNABViy2HdmkgVUbjzaYWeAd4EtgAXjTYMbiWlVCtgYHMAFcAK4DNmvXgFPAntj2DTSG2Abc0kA4BHzRA7nbNoBzwERsO285jtgG9DUOJvtAznv2OaAV296+Y4ltgNMoiR0HHNNFUdsA3gXGYtteOKbYBjiNgnuBxQEh5z37PWB/bPudY4ptwE0GSeD7rCTkPOzTVQyQ0Q3YZkz/wDdoq2SAjG7AliEw5QFyb4AcjT2urfFFN+BG4NvpdFGLABnfALhvB4GvbIAcjz7OyJAngIuBIOdhz8cOkPE69hP4ahMg43QK04qQewPk3l0PmnCBr4xnnyZCgNTtTAKfticXebZqgNTrSB4QLUSGnId9BsUAGb4DmS7ur4Anu6YRtQAZvgOYqSDkvGd/AOyrLWhuBL7QebIPz54ncIAMCVozT/bh2UGnkVCQJwl3Wx0adpAAGQLybA0hd9sGko3c6ZuL13IDg2kAx4GHqVEpQ04N4Chw2PeFfcNoAPdQs8KcHo0C4wbjlY1v0JvAt8C65+tq6h9g2WI7Pi/qFbTFbgKfAN/4vK6iOsBHBLDfZAHM70Ux+4CngbspN41MA094MGEV+cL/LPF/2siv8bzFXvVgw3aFSGVuI2M5ip/s4VdgLvZ48kcdM4NaKoFWUgKtpARaSQm0khJoJSXQSkqglZRAKymBVlICraQEWkkJtJISaCUl0EpKoJWUQCspgVZSAq2k3Qraa6mAD1UN9Drg4w10O2uVUdVA/wR8ze155CbwOXDFh0HeFPs1fP5Avvg5pKZ6jfJlBv8iCzhnYo+l9ygsoMn2K3oOeBJZp+2znm4deNFiLxX0PQo0Kf+L6wCr1lEAkxVgvgU8v4Pr9tNV4HukCvVTW7ShVoFnTSFLDkKVx17Prq+25g9ZR/NjwDGtAa9RUF/tMqiJfPPXAhplgb+RX0xDAXIL2ehqI/CYfgeODAp6HLgc2KBu+ws4EhI2Uob7htJ4LAU7l7kMm1Lw5ny7DDwDNANAHgNOIEFSazwXcKzycgW4EeAOx+ehNIN4wVMG8zbwC1INuk75NG8Emfr2Ag8AryP7M2mOx9lXVSrzW8Ax4HEkgv8MrCA5cRk1ES8+hJQAawLuq6qA7qqF5NFzsQ3xrardGe5aJdBKSqCVlEArqWrBUEtXgPeRtS4PInn8nj7nryKrtRaBu4BnkY23BpcjyZ9GL7mP0b4CZnvGfBy5S3Wdv0b2ICp3/gHkS3Kdv4DjhmUYp45TFrvU89mlrLm0BHxoty/wXALOlul0GEF/5/hsBbkjdWnJ9jz6zKD/UKbTYQR90PFZi+I5dzp7lr2lbJ34bJlOhxH0SwYz2f1HBu0R4LGC8w8Cx7qL8LO/k8ALZTodxqzjMPCxwcwDvyFZx6uIV7vUBE4CjxrMIvJ085Xs7+AawqwjdBs46+hQsVf1NZOTnQt0G1gOa8uu1jIO2C7QK8B5yj8LTpJtKxZweXWfV0Angf+IP+fVpf0BvEzuDjJ/9Kvr6G5u8hCwn+HMUAZRd6q9iGyq4nz91ncHmixnbFGhV0IVVDd5aBdBhkBb/STdrGG8M4yiBFpJCbSSEmglJdBK+h+yvGotlCx8XAAAAABJRU5ErkJggg==');
     width: 5em;
     height: 5em;
-    background: red;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }

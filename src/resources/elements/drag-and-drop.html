@@ -2,23 +2,8 @@
   <require from='./drag-and-drop.scss'></require>
   <require from='resources/value-converters/get-value'></require>
 
-  <div
-    drop.delegate='handleDrop($event)'
-    dragover.delegate='$event.preventDefault()'
-  >
-    Drag and drop here to upload files
-  </div>
-  <div>
-    <label for.one-time='id' tr='uploadMedia'>Or click here to upload a media file</label>
-    <input
-      type='file'
-      id.one-time='id'
-      accept.one-time='fileTypesString'
-      change.delegate='handleInputChange($event)'
-      multiple.one-time='multiple'
-    />
-  </div>
   <ul show.bind='uploads.length'>
+    <h2>Uploads</h2>
     <li repeat.for='upload of uploads'>
       ${upload.file.name} - ${upload.file.size} - ${upload.file.type} ---- # ${$index} ---- ${upload.progress} %
     </li>
@@ -28,4 +13,15 @@
       ${progress}
     </li>
   </ul>
+  <label for.one-time='id' tr='uploadMedia'>
+    <div
+      drop.delegate='handleDrop($event)'
+      dragover.delegate='$event.preventDefault()'
+      class='upload-controls'
+    >
+      <div class='upload-icon'></div>
+      <div>Drag files here or click here to upload</div>
+  </label>
+
+  <input type='file' id.one-time='id' accept.one-time='fileTypesString' change.delegate='handleInputChange($event)' multiple.one-time='multiple'/>
 </template>
