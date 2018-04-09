@@ -2,11 +2,17 @@
   <require from='./drag-and-drop.scss'></require>
   <require from='./progress-bar.html'></require>
 
+  <h2 show.bind='uploads.length'>Uploads</h2>
   <ul show.bind='uploads.length' class='uploads'>
-    <h2>Uploads</h2>
     <li repeat.for='upload of uploads'>
-      <div>${upload.file.name} - ${upload.file.size} - ${upload.file.type}</div>
-      <progress-bar percentage.bind='upload.progress'></progress-bar>
+      <div class='file-info'>
+        <div class='file-attributes'>${upload.file.name} - ${upload.file.size} - ${upload.file.type}</div>
+        <div if.bind='upload.progress === 100' class='icon complete-icon'></div>
+      </div>
+      <div class='progress-container' if.bind='upload.progress !== 100'>
+        <progress-bar percentage.bind='upload.progress'></progress-bar>
+        <span class='icon cancel-icon'></span>
+      </div>
     </li>
   </ul>
 
