@@ -9,13 +9,12 @@ export class DragAndDrop {
     'image/png',
     'application/*'
   ]
-  private files: Array<File>
   private uploads: Array<any>
+  @bindable private abort: Function
   @bindable private multiple: boolean = true
 
   constructor() {
     this.id = `aurelia-media-manager-${Date.now()}`
-    this.files = []
     this.fileTypesString = this.fileTypes.join()
     this.uploads = []
   }
@@ -45,6 +44,15 @@ export class DragAndDrop {
 
   handleLoadComplete = (event: Event, fileIndex: number) => {
     this.updateUploadProgress(fileIndex, 100)
+    this.uploads[fileIndex].xhr = null
+  }
+
+  handleAbort = (event: Event, fileIndex: number) => {
+    this.uploads[fileIndex].cancelled = true
+  }
+
+  abortUpload (fileIndex: number) {
+    this.uploads[fileIndex].xhr.abort()
   }
 
   private updateUploadProgress(index: number, percentage: number) {
@@ -62,6 +70,14 @@ export class DragAndDrop {
         progress: 0
       })
     })
-    uploadFiles(filesToUpload, this.handleUploadProgress, this.handleLoadComplete)
+    const xhrs = uploadFiles(filesToUpload, {
+      'progress': this.handleUploadProgress,
+      'load': this.handleLoadComplete,
+      'abort': this.handleAbort
+    })
+    this.uploads = xhrs.map((xhr, index) => {
+      this.uploads[index].xhr = xhr
+      return this.uploads[index]
+    })
   }
 }
