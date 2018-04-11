@@ -29,5 +29,11 @@
       <div>Drag files here or click here to upload</div>
   </label>
 
-  <input type='file' id.one-time='id' accept.one-time='fileTypesString' change.delegate='handleInputChange($event)' multiple.one-time='multiple'/>
+  <input
+    type='file'
+    id.one-time='id'
+    accept.one-time='fileTypes.join()'
+    change.delegate='handleInputChange($event)'
+    multiple.one-time='multiple'
+  />
 </template>
