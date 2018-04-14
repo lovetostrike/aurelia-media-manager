@@ -25,7 +25,7 @@
   "main": "dist/commonjs/index.js",
   "typings": "dist/commonjs/index.d.ts",
   "scripts": {
-    "start": "node upload-server.js & gulp watch",
+    "start": "node upload-server.js & gulp watch-plugin & gulp watch-sample",
     "test:watch": "jest --config=jest.config.json --watch",
     "build": "gulp build",
     "test": "jest --config=jest.config.json",

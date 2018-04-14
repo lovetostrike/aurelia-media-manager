@@ -122,16 +122,17 @@ gulp.task('fuse-sample', function () {
 
     // app bundle
     fuse.bundle('app')
-      .watch().cache(false).hmr({ socketURI: `ws://localhost:8080` })
+      .watch().cache(true)
         .instructions(`
             > [main.ts]
             + [**/*.{ts,html,scss,css}]
-        `);
+        `).hmr({ socketURI: `ws://localhost:8080`, reload: true });
 
     // web server    
     fuse.dev({
         root: './',
-        port: 8080
+        port: 8080,
+        socketURI: "ws://localhost:8080"
     });
 
     // run
@@ -146,8 +147,8 @@ gulp.task('fuse-plugin', function () {
     const fuse = FuseBox.init({
         homeDir: '../src',
         output: './dist/$name.js',
-        log: false, //-> set to true if you want more data
-        debug: false, //-> set to true if you want more data
+        log: true, //-> set to true if you want more data
+        debug: true, //-> set to true if you want more data
         plugins: [
             [SassPlugin(), CSSPlugin()],
             HTMLPlugin({
@@ -163,7 +164,7 @@ gulp.task('fuse-plugin', function () {
 
 
     fuse.bundle('aurelia-media-manager')
-        .watch().cache(false)
+        .watch().cache(true).hmr({ socketURI: `ws://localhost:8081`, reload: true })
         .instructions(`
             + fuse-box-css
             + [**/*.html] 
@@ -171,6 +172,11 @@ gulp.task('fuse-plugin', function () {
             + [**/*.scss]
         `).sourceMaps(true);
 
+    fuse.dev({
+      root: './',
+      port: 8081,
+      socketURI: "ws://localhost:8081"
+    });
 
     return fuse.run();
 });
@@ -178,8 +184,14 @@ gulp.task('fuse-plugin', function () {
 
 
 
-gulp.task('watch', function () {
+gulp.task('watch-plugin', function () {
     return runSequence(
-        'fuse-plugin', 'fuse-sample', 'plugin-typechecker', 'sample-typechecker'
+        'fuse-plugin', 'plugin-typechecker'
     );
 });
+
+gulp.task('watch-sample', function() {
+  return runSequence(
+    'fuse-sample', 'sample-typechecker'
+  )
+})
