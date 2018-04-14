@@ -3,7 +3,7 @@ import {PageObject_Skeleton} from './skeleton.po';
 import {browser, element, by, By, $, $$, ExpectedConditions} from 'aurelia-protractor-plugin/protractor';
 import {config} from '../protractor.conf';
 
-describe('aurelia skeleton app', function() {
+describe('aurelia media manager demo', function() {
   let poWelcome: PageObject_Welcome;
   let poSkeleton: PageObject_Skeleton;
 

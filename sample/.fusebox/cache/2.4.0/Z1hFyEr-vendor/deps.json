@@ -1,0 +1,375 @@
+{
+  "tree": {
+    "aurelia-bootstrapper@2.2.0": {
+      "deps": {
+        "aurelia-polyfills@1.3.0": {
+          "deps": {
+            "aurelia-pal@1.7.0": {
+              "deps": {},
+              "name": "aurelia-pal",
+              "version": "1.7.0"
+            }
+          },
+          "name": "aurelia-polyfills",
+          "version": "1.3.0"
+        },
+        "process@0.0.0": {
+          "deps": {},
+          "name": "process",
+          "version": "0.0.0"
+        }
+      },
+      "name": "aurelia-bootstrapper",
+      "version": "2.2.0"
+    },
+    "aurelia-framework@1.2.0": {
+      "deps": {
+        "aurelia-dependency-injection@1.3.2": {
+          "deps": {
+            "aurelia-metadata@1.0.3": {
+              "deps": {},
+              "name": "aurelia-metadata",
+              "version": "1.0.3"
+            }
+          },
+          "name": "aurelia-dependency-injection",
+          "version": "1.3.2"
+        },
+        "aurelia-binding@1.7.1": {
+          "deps": {
+            "aurelia-logging@1.4.0": {
+              "deps": {},
+              "name": "aurelia-logging",
+              "version": "1.4.0"
+            },
+            "aurelia-task-queue@1.2.1": {
+              "deps": {},
+              "name": "aurelia-task-queue",
+              "version": "1.2.1"
+            }
+          },
+          "name": "aurelia-binding",
+          "version": "1.7.1"
+        },
+        "aurelia-templating@1.7.0": {
+          "deps": {
+            "aurelia-path@1.1.1": {
+              "deps": {},
+              "name": "aurelia-path",
+              "version": "1.1.1"
+            },
+            "aurelia-loader@1.0.0": {
+              "deps": {},
+              "name": "aurelia-loader",
+              "version": "1.0.0"
+            }
+          },
+          "name": "aurelia-templating",
+          "version": "1.7.0"
+        }
+      },
+      "name": "aurelia-framework",
+      "version": "1.2.0"
+    },
+    "aurelia-loader-default@1.0.4": {
+      "deps": {},
+      "name": "aurelia-loader-default",
+      "version": "1.0.4"
+    },
+    "aurelia-fetch-client@1.3.1": {
+      "deps": {},
+      "name": "aurelia-fetch-client",
+      "version": "1.3.1"
+    },
+    "aurelia-pal-browser@1.7.0": {
+      "deps": {},
+      "name": "aurelia-pal-browser",
+      "version": "1.7.0"
+    },
+    "aurelia-animator-css@1.0.4": {
+      "deps": {},
+      "name": "aurelia-animator-css",
+      "version": "1.0.4"
+    },
+    "aurelia-logging-console@1.0.0": {
+      "deps": {},
+      "name": "aurelia-logging-console",
+      "version": "1.0.0"
+    },
+    "aurelia-templating-binding@1.4.1": {
+      "deps": {},
+      "name": "aurelia-templating-binding",
+      "version": "1.4.1"
+    },
+    "aurelia-templating-resources@1.6.0": {
+      "deps": {},
+      "name": "aurelia-templating-resources",
+      "version": "1.6.0"
+    },
+    "aurelia-event-aggregator@1.0.1": {
+      "deps": {},
+      "name": "aurelia-event-aggregator",
+      "version": "1.0.1"
+    },
+    "aurelia-history-browser@1.1.1": {
+      "deps": {
+        "aurelia-history@1.1.0": {
+          "deps": {},
+          "name": "aurelia-history",
+          "version": "1.1.0"
+        }
+      },
+      "name": "aurelia-history-browser",
+      "version": "1.1.1"
+    },
+    "aurelia-templating-router@1.3.1": {
+      "deps": {
+        "aurelia-router@1.5.0": {
+          "deps": {
+            "aurelia-route-recognizer@1.1.1": {
+              "deps": {},
+              "name": "aurelia-route-recognizer",
+              "version": "1.1.1"
+            }
+          },
+          "name": "aurelia-router",
+          "version": "1.5.0"
+        }
+      },
+      "name": "aurelia-templating-router",
+      "version": "1.3.1"
+    },
+    "fuse-box-aurelia-loader@2.0.2": {
+      "deps": {},
+      "name": "fuse-box-aurelia-loader",
+      "version": "2.0.2"
+    }
+  },
+  "flat": {
+    "aurelia-bootstrapper@2.2.0": {
+      "name": "aurelia-bootstrapper",
+      "version": "2.2.0",
+      "files": [
+        "dist/commonjs/aurelia-bootstrapper.js"
+      ]
+    },
+    "aurelia-polyfills@1.3.0": {
+      "name": "aurelia-polyfills",
+      "version": "1.3.0",
+      "files": [
+        "dist/commonjs/aurelia-polyfills.js"
+      ]
+    },
+    "aurelia-pal@1.7.0": {
+      "name": "aurelia-pal",
+      "version": "1.7.0",
+      "files": [
+        "dist/commonjs/aurelia-pal.js"
+      ]
+    },
+    "process@0.0.0": {
+      "name": "process",
+      "version": "0.0.0",
+      "files": [
+        "index.js"
+      ]
+    },
+    "aurelia-framework@1.2.0": {
+      "name": "aurelia-framework",
+      "version": "1.2.0",
+      "files": [
+        "dist/commonjs/aurelia-framework.js"
+      ]
+    },
+    "aurelia-dependency-injection@1.3.2": {
+      "name": "aurelia-dependency-injection",
+      "version": "1.3.2",
+      "files": [
+        "dist/commonjs/aurelia-dependency-injection.js"
+      ]
+    },
+    "aurelia-metadata@1.0.3": {
+      "name": "aurelia-metadata",
+      "version": "1.0.3",
+      "files": [
+        "dist/commonjs/aurelia-metadata.js"
+      ]
+    },
+    "aurelia-binding@1.7.1": {
+      "name": "aurelia-binding",
+      "version": "1.7.1",
+      "files": [
+        "dist/commonjs/aurelia-binding.js"
+      ]
+    },
+    "aurelia-logging@1.4.0": {
+      "name": "aurelia-logging",
+      "version": "1.4.0",
+      "files": [
+        "dist/commonjs/aurelia-logging.js"
+      ]
+    },
+    "aurelia-task-queue@1.2.1": {
+      "name": "aurelia-task-queue",
+      "version": "1.2.1",
+      "files": [
+        "dist/commonjs/aurelia-task-queue.js"
+      ]
+    },
+    "aurelia-templating@1.7.0": {
+      "name": "aurelia-templating",
+      "version": "1.7.0",
+      "files": [
+        "dist/commonjs/aurelia-templating.js"
+      ]
+    },
+    "aurelia-path@1.1.1": {
+      "name": "aurelia-path",
+      "version": "1.1.1",
+      "files": [
+        "dist/commonjs/aurelia-path.js"
+      ]
+    },
+    "aurelia-loader@1.0.0": {
+      "name": "aurelia-loader",
+      "version": "1.0.0",
+      "files": [
+        "dist/commonjs/aurelia-loader.js"
+      ]
+    },
+    "aurelia-loader-default@1.0.4": {
+      "name": "aurelia-loader-default",
+      "version": "1.0.4",
+      "files": [
+        "dist/commonjs/aurelia-loader-default.js"
+      ]
+    },
+    "aurelia-fetch-client@1.3.1": {
+      "name": "aurelia-fetch-client",
+      "version": "1.3.1",
+      "files": [
+        "dist/commonjs/aurelia-fetch-client.js"
+      ]
+    },
+    "aurelia-pal-browser@1.7.0": {
+      "name": "aurelia-pal-browser",
+      "version": "1.7.0",
+      "files": [
+        "dist/commonjs/aurelia-pal-browser.js"
+      ]
+    },
+    "aurelia-animator-css@1.0.4": {
+      "name": "aurelia-animator-css",
+      "version": "1.0.4",
+      "files": [
+        "dist/commonjs/aurelia-animator-css.js"
+      ]
+    },
+    "aurelia-logging-console@1.0.0": {
+      "name": "aurelia-logging-console",
+      "version": "1.0.0",
+      "files": [
+        "dist/commonjs/aurelia-logging-console.js"
+      ]
+    },
+    "aurelia-templating-binding@1.4.1": {
+      "name": "aurelia-templating-binding",
+      "version": "1.4.1",
+      "files": [
+        "dist/commonjs/aurelia-templating-binding.js"
+      ]
+    },
+    "aurelia-templating-resources@1.6.0": {
+      "name": "aurelia-templating-resources",
+      "version": "1.6.0",
+      "files": [
+        "dist/commonjs/aurelia-templating-resources.js",
+        "dist/commonjs/compose.js",
+        "dist/commonjs/if.js",
+        "dist/commonjs/if-core.js",
+        "dist/commonjs/else.js",
+        "dist/commonjs/with.js",
+        "dist/commonjs/repeat.js",
+        "dist/commonjs/repeat-strategy-locator.js",
+        "dist/commonjs/null-repeat-strategy.js",
+        "dist/commonjs/array-repeat-strategy.js",
+        "dist/commonjs/repeat-utilities.js",
+        "dist/commonjs/map-repeat-strategy.js",
+        "dist/commonjs/set-repeat-strategy.js",
+        "dist/commonjs/number-repeat-strategy.js",
+        "dist/commonjs/analyze-view-factory.js",
+        "dist/commonjs/abstract-repeater.js",
+        "dist/commonjs/show.js",
+        "dist/commonjs/aurelia-hide-style.js",
+        "dist/commonjs/hide.js",
+        "dist/commonjs/sanitize-html.js",
+        "dist/commonjs/html-sanitizer.js",
+        "dist/commonjs/replaceable.js",
+        "dist/commonjs/focus.js",
+        "dist/commonjs/css-resource.js",
+        "dist/commonjs/attr-binding-behavior.js",
+        "dist/commonjs/binding-mode-behaviors.js",
+        "dist/commonjs/throttle-binding-behavior.js",
+        "dist/commonjs/debounce-binding-behavior.js",
+        "dist/commonjs/self-binding-behavior.js",
+        "dist/commonjs/signal-binding-behavior.js",
+        "dist/commonjs/binding-signaler.js",
+        "dist/commonjs/update-trigger-binding-behavior.js",
+        "dist/commonjs/html-resource-plugin.js",
+        "dist/commonjs/dynamic-element.js"
+      ]
+    },
+    "aurelia-event-aggregator@1.0.1": {
+      "name": "aurelia-event-aggregator",
+      "version": "1.0.1",
+      "files": [
+        "dist/commonjs/aurelia-event-aggregator.js"
+      ]
+    },
+    "aurelia-history-browser@1.1.1": {
+      "name": "aurelia-history-browser",
+      "version": "1.1.1",
+      "files": [
+        "dist/commonjs/aurelia-history-browser.js"
+      ]
+    },
+    "aurelia-history@1.1.0": {
+      "name": "aurelia-history",
+      "version": "1.1.0",
+      "files": [
+        "dist/commonjs/aurelia-history.js"
+      ]
+    },
+    "aurelia-templating-router@1.3.1": {
+      "name": "aurelia-templating-router",
+      "version": "1.3.1",
+      "files": [
+        "dist/commonjs/aurelia-templating-router.js",
+        "dist/commonjs/route-loader.js",
+        "dist/commonjs/router-view.js",
+        "dist/commonjs/route-href.js"
+      ]
+    },
+    "aurelia-router@1.5.0": {
+      "name": "aurelia-router",
+      "version": "1.5.0",
+      "files": [
+        "dist/commonjs/aurelia-router.js"
+      ]
+    },
+    "aurelia-route-recognizer@1.1.1": {
+      "name": "aurelia-route-recognizer",
+      "version": "1.1.1",
+      "files": [
+        "dist/commonjs/aurelia-route-recognizer.js"
+      ]
+    },
+    "fuse-box-aurelia-loader@2.0.2": {
+      "name": "fuse-box-aurelia-loader",
+      "version": "2.0.2",
+      "files": [
+        "dist/commonjs/fuse-box-aurelia-loader.js"
+      ]
+    }
+  }
+}

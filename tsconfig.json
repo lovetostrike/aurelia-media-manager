@@ -1,28 +1,37 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "rootDir": "src/",
+    "outDir": "dist/",
+    "sourceMap": true,
     "target": "es5",
-    "module": "esnext",
+    "module": "amd",
+    "declaration": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": true,
+    "noUnusedParameters": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": false,
+    "noUnusedLocals": false,
+    "allowUnreachableCode": false,
+    "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
-    "sourceRoot": "src",
-    "sourceMap": true,
-    "allowJs": true,
-    "baseUrl": "src",
-    "skipLibCheck": true,
-    "lib": [
-      "es2017", "dom"
-    ]
+    "lib": ["es2017", "dom"]
   },
-  "exclude": [
-    "node_modules",
-    "aurelia_project"
-  ],
   "filesGlob": [
     "./src/**/*.ts",
-    "./test/**/*.ts",
-    "./custom_typings/**/*.d.ts"
+    "./test/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "sample",
+    "dist",
+    "build",
+    "test"
   ],
   "atom": {
     "rewriteTsconfig": false

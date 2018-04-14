@@ -1,0 +1,8 @@
+<template bindable='percentage'>
+  <require from='./progress-bar.scss'></require>
+
+  <div class='progress'>
+    <span class='text'>${percentage}%</span>
+    <div class='meter' css='width: ${percentage}%'></div>
+  </div>
+</template>
