@@ -12,8 +12,10 @@ export function configure (config: FrameworkConfiguration, options: any): void {
     multiple: true,
     abort: noop
   }
+  config.aurelia.use.plugin('aurelia-simple-tabs')
   config.container.get(ConfigService).config = Object.assign({}, defaultOptions, options || {})
   config.globalResources([
+    './resources/elements/media-manager',
     './resources/elements/drag-and-drop'
   ])
 }

@@ -6,6 +6,7 @@ export function configure (aurelia: Aurelia) {
     .plugin('aurelia-media-manager', {
       fileTypes: ['image/*', 'video/*', 'application/*']
     })
+    .plugin('aurelia-simple-tabs')
 
   aurelia.start().then(() => aurelia.setRoot('app'))
 }

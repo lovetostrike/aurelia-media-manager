@@ -86,16 +86,21 @@ gulp.task('fuse-sample', function () {
     const fuse = FuseBox.init({
         homeDir: './src',
         output: './dist/$name.js',
-        log: false, //-> set to true if you want more data
-        debug: false, //-> set to true if you want more data
+        log: true, //-> set to true if you want more data
+        debug: true, //-> set to true if you want more data
         plugins: [
             injectBoostrapAndLoader(),
             [SassPlugin(), CSSPlugin()],
             HTMLPlugin(),
-            RawPlugin(['.scss', '.woff'])
+            RawPlugin(['.scss', '.css', '.woff'])
         ]
     });
 
+    fuse.register('aurelia-simple-tabs', {
+      homeDir: 'node_modules/aurelia-simple-tabs/dist/commonjs',
+      main: 'index.js',
+      instructions: '**/*.{html,css,js}'
+    });
 
     // vendor bundle
     fuse.bundle("vendor")
@@ -117,6 +122,8 @@ gulp.task('fuse-sample', function () {
         + aurelia-history-browser 
         + aurelia-templating-router
         + fuse-box-aurelia-loader
+        + fuse-box-css
+        + aurelia-simple-tabs
 `)
 
 
@@ -162,11 +169,9 @@ gulp.task('fuse-plugin', function () {
         },
     });
 
-
     fuse.bundle('aurelia-media-manager')
         .watch().cache(true).hmr({ socketURI: `ws://localhost:8081`, reload: true })
         .instructions(`
-            + fuse-box-css
             + [**/*.html] 
             + [**/*.ts]
             + [**/*.scss]

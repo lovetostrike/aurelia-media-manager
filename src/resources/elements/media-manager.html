@@ -1,0 +1,14 @@
+<template>
+  <require from='./media-manager.scss'></require>
+  <require from='./media-sources.html'></require>
+  <require from='./media-source'></require>
+
+  <media-sources>
+    <media-source name='Computer' id='computer'>
+      <drag-and-drop abort.one-time='handleAbort'></drag-and-drop>
+    </media-source>
+    <media-source name='My Uploads' id='uploads'>
+      <span>Lots of uploads</span>
+    </media-source>
+  </media-sources>
+</template>
