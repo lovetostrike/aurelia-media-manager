@@ -1,39 +1,45 @@
 <template>
-  <require from='./drag-and-drop.scss'></require>
-  <require from='./progress-bar.html'></require>
+  <slot>
+    <require from='./drag-and-drop.scss'></require>
+    <require from='./progress-bar.html'></require>
 
-  <h2 show.bind='uploads.length'>Uploads</h2>
-  <ul show.bind='uploads.length' class='uploads'>
-    <li repeat.for='upload of uploads'>
-      <div class='file-info'>
-        <div class='file-attributes'>
-          ${upload.file.name} - ${upload.file.size} - ${upload.file.type}
-        </div>
-        <div if.bind='upload.progress === 100 && !upload.cancelled' class='icon complete-btn'></div>
-        <div if.bind='upload.cancelled' class='error'>CANCELLED</div>
-      </div>
-      <div class='progress-container' if.bind='upload.progress !== 100 && !upload.cancelled'>
-        <progress-bar percentage.bind='upload.progress'></progress-bar>
-        <span class='icon btn cancel-btn' click.delegate='abortUpload($index)'></span>
-      </div>
-    </li>
-  </ul>
+    <slot name='uploads'>
+      <h2 show.bind='uploads.length'>Uploads</h2>
+      <ul show.bind='uploads.length' class='uploads'>
+        <li repeat.for='upload of uploads'>
+          <div class='file-info'>
+            <div class='file-attributes'>
+              ${upload.file.name} - ${upload.file.size} - ${upload.file.type}
+            </div>
+            <div if.bind='upload.progress === 100 && !upload.cancelled' class='icon complete-btn'></div>
+            <div if.bind='upload.cancelled' class='error'>CANCELLED</div>
+          </div>
+          <div class='progress-container' if.bind='upload.progress !== 100 && !upload.cancelled'>
+            <progress-bar percentage.bind='upload.progress'></progress-bar>
+            <span class='icon btn cancel-btn' click.delegate='abortUpload($index)'></span>
+          </div>
+        </li>
+      </ul>
+    </slot>
 
-  <label for.one-time='id' tr='uploadMedia'>
-    <div
-      drop.delegate='handleDrop($event)'
-      dragover.delegate='$event.preventDefault()'
-      class='upload-controls'
-    >
-      <div class='upload-icon'></div>
-      <div>Drag files here or click here to upload</div>
-  </label>
+    <slot name='drop-zone'>
+      <label for.one-time='id' tr='uploadMedia'>
+        <div
+          drop.delegate='handleDrop($event)'
+          dragover.delegate='$event.preventDefault()'
+          class='upload-controls'
+        >
+          <div class='upload-icon'></div>
+          <div>Drag files here or click here to upload</div>
+      </label>
+    </slot>
 
-  <input
-    type='file'
-    id.one-time='id'
-    accept.one-time='fileTypes.join()'
-    change.delegate='handleInputChange($event)'
-    multiple.one-time='multiple'
-  />
+    <input
+      type='file'
+      id.one-time='id'
+      accept.one-time='fileTypes.join()'
+      change.delegate='handleInputChange($event)'
+      multiple.one-time='multiple'
+    />
+  </slot>
 </template>

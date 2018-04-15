@@ -1,8 +1,12 @@
 <template bindable='percentage'>
-  <require from='./progress-bar.scss'></require>
-
-  <div class='progress'>
-    <span class='text'>${percentage}%</span>
-    <div class='meter' css='width: ${percentage}%'></div>
-  </div>
+  <slot>
+    <require from='./progress-bar.scss'></require>
+    
+    <div class='progress'>
+      <slot name='text'>
+        <span class='text'>${percentage}%</span>
+      </slot>
+      <div class='meter' css='width: ${percentage}%'></div>
+    </div>
+  </slot>
 </template>
