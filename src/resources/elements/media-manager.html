@@ -4,11 +4,8 @@
   <require from='./media-source'></require>
 
   <media-sources>
-    <media-source name='Computer' id='computer'>
-      <drag-and-drop abort.one-time='handleAbort'></drag-and-drop>
-    </media-source>
-    <media-source name='My Uploads' id='uploads'>
-      <span>Lots of uploads</span>
+    <media-source repeat.for="source of sources" name.bind='source.name'>
+      <compose view-model='${source.viewModel}' model.bind='getMediaSourceModel(source)'</compose>
     </media-source>
   </media-sources>
 </template>

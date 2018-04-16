@@ -1,5 +1,4 @@
-import { ConfigService } from '../../services/config-service';
-import { autoinject, bindable } from 'aurelia-framework'
+import { autoinject, bindable, bindingMode } from 'aurelia-framework'
 import {uploadFiles} from '../../lib/file-upload'
 
 @autoinject
@@ -8,14 +7,10 @@ export class DragAndDrop {
   @bindable private abort: Function
   @bindable private multiple: boolean
   private id: string
-  private uploads: Array<any> = []
+  @bindable({defaultBindingMode: bindingMode.twoWay}) private uploads: Array<any> = []
 
-  constructor(private configService: ConfigService) {
+  constructor() {
     this.id = `aurelia-media-manager-${Date.now()}`
-    const defaultConfig = this.configService.config
-    this.fileTypes = this.fileTypes || defaultConfig.fileTypes
-    this.abort = this.abort || defaultConfig.abort
-    this.multiple = typeof this.multiple === 'undefined' ? defaultConfig.multiple : this.multiple
   }
 
   handleInputChange = (event: Event) => {

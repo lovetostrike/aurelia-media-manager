@@ -3,17 +3,28 @@ import { FrameworkConfiguration } from 'aurelia-framework'
 import { ConfigService } from './services/config-service'
 import {noop} from './lib/utils'
 
-export function configure (config: FrameworkConfiguration, options: any): void {
+export function configure (config: FrameworkConfiguration, options: Function): void {
   const defaultOptions = {
-    fileTypes: [
-      'image/*',
-      'video/*'
-    ],
-    multiple: true,
-    abort: noop
+    abort: noop,
+    sources: [
+      {
+        name: 'Computer',
+        viewModel: './computer-source',
+        fileTypes: [
+          'image/*',
+          'video/*'
+        ],
+        multiple: true
+      },
+      {
+        name: 'Uploads',
+        viewModel: './uploads-source'
+      }
+    ]
   }
   config.aurelia.use.plugin('aurelia-simple-tabs')
-  config.container.get(ConfigService).config = Object.assign({}, defaultOptions, options || {})
+  let mergedOptions = typeof options === 'function' ? options(defaultOptions) : defaultOptions
+  config.container.get(ConfigService).config = mergedOptions
   config.globalResources([
     './resources/elements/media-manager',
     './resources/elements/drag-and-drop'
